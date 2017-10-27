@@ -1,12 +1,12 @@
-![Website](./images/sender.png)
+![Website](./images/receiver.png)
 
 ---
 
-# IOTA Message Sender with local POW
+# IOTA Message Receiver
 
-Proof of concept application using IOTA Tangle to send messages and tokens.
+Proof of concept application using IOTA Tangle to read messages and values.
 It's simply the IOTA Leaderboard Example https://github.com/domschiener/leaderboard-example with some modifications.
-It  has to be used in pair with IOTA Message Receiver
+It  has to be used in pair with IOTA Message Sender https://github.com/alero3/IotaMessageSender
 
 # Differences with respect to IOTA Leaderboard Example
 
