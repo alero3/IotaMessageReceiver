@@ -1,0 +1,86 @@
+{
+  "name": "iota_receiver",
+  "productName": "IOTA Message Receiver",
+  "description": "IOTA Message Receiver",
+  "version": "0.1.0",
+  "license": "GPL-3.0",
+  "main": "js/main.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps && node install-deps.js && cd js && bower install",
+    "start": "export NODE_ENV=development || set NODE_ENV=development && electron js/main.js",
+    "precompile": "rimraf out/* && node install-deps.js",
+    "compile": "export CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder --win --mac --linux --x64 --ia32",
+    "compile:lin": "electron-builder --linux --x64 --ia32",
+    "compile:mac": "export CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder --mac --x64",
+    "compile:win": "electron-builder --win --x64 --ia32",
+    "compile:win64": "electron-builder --win --x64",
+    "compile:win32": "electron-builder --win --x32",
+    "prepublish": "rimraf out/*",
+    "publish": "export CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder --win --mac --linux --x64 --ia32 --publish always",
+    "publish:lin": "electron-builder --linux --x64 --ia32 --publish always",
+    "publish:mac": "export CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder --mac --x64 --publish always",
+    "publish:win": "electron-builder --win --x64 --ia32 --publish always"
+  },
+  "author": "Alessandro Rota",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alero3/IotaMessageReceiver"
+  },
+  "dependencies": {
+    "fs-extra": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron": "1.7.4",
+    "electron-builder": "^19.19.1",
+    "follow-redirects": "^1.2.4",
+    "rimraf": "^2.6.1"
+  },
+  "build": {
+    "directories": {
+      "buildResources": "build",
+      "output": "out"
+    },
+    "publish": [
+      "github"
+    ],
+    "appId": "com.alero.receiver",
+    "protocols": [
+      {
+        "name": "IOTA URL Scheme",
+        "schemes": [
+          "iota"
+        ]
+      }
+    ],
+    "dmg": {
+      "iconSize": 125,
+      "contents": [
+        {
+          "x": 235,
+          "y": 290,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 235,
+          "y": 20,
+          "type": "file"
+        }
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "tar.gz"
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    }
+  }
+}

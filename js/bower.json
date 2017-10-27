@@ -1,0 +1,12 @@
+{
+  "name": "iota-ui",
+  "authors": [
+    "Alessandro Rota"
+  ],
+  "homepage": "https://www.iota.org/",
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "remodal": "^1.0.7",
+    "iota.lib.js": "^0.4.1"
+  }
+}
