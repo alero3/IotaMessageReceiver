@@ -57,33 +57,25 @@ If you wish to compile the app, install the following also:
   git clone https://github.com/alero3/IotaMessageSender
   ```
 
-2. Go to the `wallet` directory:
+2. Go to the `IotaMessageReceiver` directory:
 
   ```
-  cd wallet
+  cd IotaMessageReceiver
   ```
-
-3. Clone iri: 
-
-  ```
-  git clone https://github.com/iotaledger/iri
-  ```
-
-  Note: make sure compiled iri.jar is in the `iri` folder.
   
-4. Install components
+3. Install components
 
   ```
   npm install
   ```
 
-5. Run the app:
+4. Run the app:
 
   ```
   npm start
   ```
 
-6. If you wish to compile the app: 
+5. If you wish to compile the app: 
 
   ```
   npm run compile
